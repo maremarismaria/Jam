@@ -20,8 +20,6 @@ public class LifeController : MonoBehaviour {
 		float y = scale.y;
 		float z = scale.z;
 
-		Debug.Log(GlobalVariables.playerLife);
-
 		gameObject.transform.localScale = new Vector3(x, y, z);
 		
 	}
