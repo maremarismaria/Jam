@@ -16,7 +16,7 @@ public class LifeController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		float x = scale.x * GlobalVariables.playerLife / 100.0f;
+		float x = Mathf.Max(scale.x * GlobalVariables.playerLife / 100.0f, 0.0f);
 		float y = scale.y;
 		float z = scale.z;
 
