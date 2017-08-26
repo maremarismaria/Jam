@@ -13,6 +13,8 @@ public class GameControl : MonoBehaviour {
 	private int numberOfBugs;
 	private int computersLeft;
 
+	public float spawnOffset = 0.3f;
+
 	public List<Transform> spawnPositions;
 
 	private static GameControl mainControl;
@@ -43,7 +45,8 @@ public class GameControl : MonoBehaviour {
 			do{
 				newTranform = spawnPositions[Random.Range(0, spawnPositions.Count)];
 			}while(newTranform.position == computerTranform.position);
-			Instantiate(bugPrefab, newTranform.position, Quaternion.identity);
+			Vector3 newposition = newTranform.position + new Vector3(Random.RandomRange(spawnOffset, -spawnOffset), Random.RandomRange(spawnOffset, -spawnOffset), 0);
+			Instantiate(bugPrefab, newposition, Quaternion.identity);
 		}
 	}
 

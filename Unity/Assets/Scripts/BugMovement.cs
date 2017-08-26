@@ -17,3 +17,4 @@ public class BugMovement : MonoBehaviour {
 		transform.position -= Vector3.Normalize(transform.position - position) * velocity * Time.deltaTime;
 	}
 }
+
