@@ -18,7 +18,7 @@ public class BugsDamage : MonoBehaviour {
 
 	void OnCollisionStay2D(Collision2D collision){
 		if(collision.collider.tag == "Player" || collision.collider.tag == "Computer"){
-			GlobalVariables.playerLife -= 1 * Time.deltaTime;
+			GlobalVariables.playerLife -= 50 * Time.deltaTime;
 		}
 	}
 

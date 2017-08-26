@@ -7,7 +7,7 @@ public class LifeController : MonoBehaviour {
 	//On Life bar
 
 	Vector3 scale;
-
+	
 	// Use this for initialization
 	void Start () {
 		scale = gameObject.transform.localScale;
@@ -19,6 +19,8 @@ public class LifeController : MonoBehaviour {
 		float x = scale.x * GlobalVariables.playerLife / 100.0f;
 		float y = scale.y;
 		float z = scale.z;
+
+		Debug.Log(GlobalVariables.playerLife);
 
 		gameObject.transform.localScale = new Vector3(x, y, z);
 		
