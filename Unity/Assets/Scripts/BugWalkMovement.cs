@@ -35,8 +35,11 @@ public class BugWalkMovement : MonoBehaviour {
 				-Mathf.Sign(transform.position.x - position.x) * velocity,
 				 GetComponent<Rigidbody2D>().velocity.y);
 
-			if(Random.Range(0, 300) <= 1) 
+			Debug.Log(Time.deltaTime);
+
+			if(Random.Range(0, 3000f * Time.deltaTime) < 1) 
 				Jump();
+				
 		}
 
 	}
