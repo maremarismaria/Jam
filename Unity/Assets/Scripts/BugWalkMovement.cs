@@ -49,7 +49,7 @@ public class BugWalkMovement : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		//Debug.Log(collision.otherCollider.gameObject.LayerMask);
 		if(jumping && GetComponent<Rigidbody2D>().velocity.y <= 0
-		 && collision.otherCollider.gameObject.tagName != "Player") {
+		 && !collision.otherCollider.gameObject.CompareTag("Player")) {
 			jumping = false;
 		}
 	}

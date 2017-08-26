@@ -14,12 +14,17 @@ public class Pause : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(Input.GetKey(KeyCode.P)){
+		if(Input.GetKeyDown(KeyCode.P)){
 			paused = !paused;
+			GetComponent<Animator>().SetBool("Rest", paused);
 			
 		}
 
 		if(paused){
+			if(GetComponent<Rigidbody2D>().velocity.magnitude != 0) {
+				paused = false;
+				GetComponent<Animator>().SetBool("Rest", false);
+			}
 			GlobalVariables.playerLife += 8 * Time.deltaTime;
 		}
 

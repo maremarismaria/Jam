@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameControl : MonoBehaviour {
 
 	public GameObject computerPrefab;
+	public float mainBugPercentage;
 	public GameObject bugPrefab;
+	public GameObject bug2Prefab;
 
 	public int bugWaveAmount = 4;
 	public int numberOfComputers = 4;
