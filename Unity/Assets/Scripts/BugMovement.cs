@@ -13,8 +13,9 @@ public class BugMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 position = GameControl.Main().ComputerPosition();
-		transform.position -= Vector3.Normalize(transform.position - position) * velocity * Time.deltaTime;
+		Vector3 computerPosition = GameControl.Main().ComputerPosition();
+		Vector3 position = Vector3.Normalize(transform.position - computerPosition) * velocity * Time.deltaTime;
+		transform.position -= position;
 	}
 }
 
