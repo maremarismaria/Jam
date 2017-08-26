@@ -21,10 +21,9 @@ public class PizzaBehaviour : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
-		if(collider.gameObject.tag == "Bug"){
+		if(collider.gameObject.tag == "Bug" || collider.gameObject.tag == "Underground"){
 			Destroy(gameObject);
 		}
-
 		
 	}
 
