@@ -18,6 +18,7 @@ public class PizzaBehaviour : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D collider){
 		if(collider.gameObject.tag == "Player"){
 			GlobalVariables.numPizzas += 1;
+			GlobalVariables.playerLife += 10 * Time.deltaTime;
 			Destroy(gameObject);
 		}
 

@@ -5,6 +5,6 @@ using UnityEngine;
 public class GlobalVariables {
 	public static float playerLife = 100.0f;
 	public static int numPizzas = 0;
-
 	public static float width = 100;
+	
 }

@@ -20,7 +20,7 @@ public class LifeRefillZone : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D collider){
 		if(collider.gameObject.tag == "Player"){
-			GlobalVariables.playerLife += 1 * Time.deltaTime;
+			GlobalVariables.playerLife += 20 * Time.deltaTime;
 		}
 	}
 
