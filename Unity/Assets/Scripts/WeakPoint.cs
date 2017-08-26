@@ -14,8 +14,11 @@ public class WeakPoint : MonoBehaviour {
 		
 	}
 
+	private bool toDestroy = false;
+
 	void OnTriggerEnter2D(Collider2D other) {
-		if(other.CompareTag("Player")) {
+		if(!toDestroy && other.CompareTag("Player")) {
+			toDestroy = true;
 			GameControl.Main().BugDie();
 			Destroy(transform.parent.gameObject);
 		}
