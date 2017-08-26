@@ -7,6 +7,8 @@ public class GameControl : MonoBehaviour {
 	public GameObject computerPrefab;
 	public GameObject bugPrefab;
 
+	private int nummberOfBugs;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -21,6 +23,6 @@ public class GameControl : MonoBehaviour {
 
 	}
 
-
+	
 
 }
