@@ -8,10 +8,14 @@ public class BugWalkMovement : MonoBehaviour {
 	public float jumpForce = 100;
 	public float jumpCheck = 10000;
 	private bool jumping = false;
+	private float jumpRandomness;
 
 	// Use this for initialization
 	void Start () {
-		
+		jumpRandomness = Random.Range(3, 12) * 1000;
+		jumpCheck = jumpForce / 10;
+
+		Debug.Log(jumpCheck);
 	}
 	
 	// Update is called once per frame
@@ -35,7 +39,7 @@ public class BugWalkMovement : MonoBehaviour {
 				-Mathf.Sign(transform.position.x - position.x) * velocity,
 				 GetComponent<Rigidbody2D>().velocity.y);
 
-			if(Random.Range(0, 3000f * Time.deltaTime) < 1) 
+			if(Random.Range(0, jumpRandomness * Time.deltaTime) < 1) 
 				Jump();
 
 		}
@@ -45,7 +49,7 @@ public class BugWalkMovement : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		//Debug.Log(collision.otherCollider.gameObject.LayerMask);
 		if(jumping && GetComponent<Rigidbody2D>().velocity.y <= 0
-		 ) {
+		 && collision.otherCollider.gameObject.tagName != "Player") {
 			jumping = false;
 		}
 	}

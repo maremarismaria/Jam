@@ -25,6 +25,7 @@ public class GameControl : MonoBehaviour {
 		numberOfBugs = bugWaveAmount;
 		computersLeft = numberOfComputers;
 		mainControl = this;
+		Debug.Log(numberOfBugs+" "+computersLeft);
 		AddComputer();
 	}
 	
@@ -63,6 +64,7 @@ public class GameControl : MonoBehaviour {
 				AddComputer();
 			}
 		}
+
 	}
 
 	public Vector3 ComputerPosition() {
