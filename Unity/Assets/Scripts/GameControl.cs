@@ -33,21 +33,22 @@ public class GameControl : MonoBehaviour {
 		
 	}
 
-	public static GameControl main() {
+	public static GameControl Main() {
 		return mainControl;
 	}
 
 	public void AddComputer() {
 		Transform computerTranform = spawnPositions[Random.Range(0, spawnPositions.Count)];
 		computer = Instantiate(computerPrefab, computerTranform.position, Quaternion.identity);
-		for(int i = 0; i < numberOfBugs; i++) {
+		for(int i = 0; i < bugWaveAmount; i++) {
 			Transform newTranform;
 			do{
 				newTranform = spawnPositions[Random.Range(0, spawnPositions.Count)];
 			}while(newTranform.position == computerTranform.position);
-			Vector3 newposition = newTranform.position + new Vector3(Random.RandomRange(spawnOffset, -spawnOffset), Random.RandomRange(spawnOffset, -spawnOffset), 0);
+			Vector3 newposition = newTranform.position + new Vector3(Random.Range(spawnOffset, -spawnOffset), Random.Range(spawnOffset, -spawnOffset), 0);
 			Instantiate(bugPrefab, newposition, Quaternion.identity);
 		}
+		numberOfBugs = bugWaveAmount;
 	}
 
 	public void BugDie(){
@@ -57,12 +58,14 @@ public class GameControl : MonoBehaviour {
 				//win
 			}else{
 				computersLeft--;
+				Destroy(computer.gameObject);
+				Debug.Log(computersLeft);
 				AddComputer();
 			}
 		}
 	}
 
-	public Vector3 computerPosition() {
+	public Vector3 ComputerPosition() {
 		return computer.transform.position;
 	}
 
