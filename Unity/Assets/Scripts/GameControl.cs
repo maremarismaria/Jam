@@ -16,6 +16,8 @@ public class GameControl : MonoBehaviour {
 	public int bugWaveAmount = 4;
 	public int numberOfComputers = 4;
 
+	private bool init = false;
+
 	private int numberOfBugs{
 		get{
 			return GlobalVariables.numBugs;			
@@ -49,11 +51,7 @@ public class GameControl : MonoBehaviour {
 		mainControl = this;
 		Debug.Log(numberOfBugs+" "+computersLeft);
 		AddComputer();
-		//if(GlobalVariables.playerIsGirl)
-		player = Instantiate(GlobalVariables.playerSelected? playerGirl : playerBoy, computer.transform.position, Quaternion.identity);
-
-
-
+		player = Instantiate(GlobalVariables.playerSelected? playerGirl : playerBoy, FindPositionWithoutPc(), Quaternion.identity);
 	}
 	
 	// Update is called once per frame
@@ -67,16 +65,24 @@ public class GameControl : MonoBehaviour {
 
 	public void AddComputer() {
 		Transform computerTranform = spawnPositions[Random.Range(0, spawnPositions.Count)];
-		computer = Instantiate(computerPrefab, computerTranform.position, Quaternion.identity);
+		computer = Instantiate(computerPrefab, computerTranform.position, Quaternion.identity);	
+	}
+
+	public void SpawnBugs() {
+		init = true;
 		for(int i = 0; i < bugWaveAmount; i++) {
-			Transform newTranform;
-			do{
-				newTranform = spawnPositions[Random.Range(0, spawnPositions.Count)];
-			}while(newTranform.position == computerTranform.position);
-			Vector3 newposition = newTranform.position + new Vector3(Random.Range(spawnOffset, -spawnOffset), Random.Range(spawnOffset, -spawnOffset), 0);
+			Vector3 newposition = FindPositionWithoutPc() + new Vector3(Random.Range(spawnOffset, -spawnOffset), Random.Range(spawnOffset, -spawnOffset), 0);
 			Instantiate( Random.Range(0, 100) < mainBugPercentage? bugPrefab : bug2Prefab, newposition, Quaternion.identity);
 		}
 		numberOfBugs = bugWaveAmount;
+	}
+
+	private Vector3 FindPositionWithoutPc(){
+		Transform newTranform;
+		do{
+			newTranform = spawnPositions[Random.Range(0, spawnPositions.Count)];
+		}while(newTranform.position == computer.transform.position);
+		return newTranform.position;
 	}
 
 	public void BugDie(){
@@ -89,9 +95,14 @@ public class GameControl : MonoBehaviour {
 				Destroy(computer.gameObject);
 				Debug.Log(computersLeft);
 				AddComputer();
+				SpawnBugs();
 			}
 		}
 
+	}
+
+	public bool IsStarted() {
+		return init;
 	}
 
 	public Vector3 ComputerPosition() {
