@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OnClickButtonsMenu : MonoBehaviour {
 
@@ -16,6 +17,7 @@ public class OnClickButtonsMenu : MonoBehaviour {
 
 	public void select(bool sel){
 		GlobalVariables.playerSelected = sel;
+		SceneManager.LoadScene("World1");
 	}
 
 }
