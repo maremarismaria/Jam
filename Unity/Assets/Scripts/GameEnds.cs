@@ -16,7 +16,7 @@ public class GameEnds : MonoBehaviour {
 		if(GlobalVariables.playerLife <= 0){
 			GlobalVariables.gameOver = true;
 			SceneManager.LoadScene("GameEnds");
-			GameObject.FindGameObjectWithTag("EndText").GetComponent<Text>().text = "Game Over";
+			GlobalVariables.message = "Game Over";
 		}
 	}
 
@@ -24,10 +24,8 @@ public class GameEnds : MonoBehaviour {
 		if(collider.gameObject.tag == "Jam" && GlobalVariables.playerLife > 0){
 			GlobalVariables.win = true;
 			SceneManager.LoadScene("GameEnds");
-			GameObject.FindGameObjectWithTag("EndText").GetComponent<Text>().text = "Win";
+			GlobalVariables.message = "Win";
 		}
 	}
-
-
 
 }
