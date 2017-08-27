@@ -14,8 +14,11 @@ public class ComputerAnim : MonoBehaviour {
 		
 	}
 
+	private bool init = false; 
+
 	void OnTriggerEnter2D(Collider2D other) {
-		if(other.CompareTag("Player") && !GameControl.Main().IsStarted()) {
+		if(!init && other.CompareTag("Player") && !GameControl.Main().IsStarted()) {
+			init = true;
 			GameControl.Main().GetPlayer().SetActive(false);
 			GetComponent<Animator>().SetBool(GlobalVariables.playerSelected? "GirlAnim" : "BoyAnim", true);
 			StartCoroutine(CodingAnimationCorutine());
@@ -25,9 +28,10 @@ public class ComputerAnim : MonoBehaviour {
 
 	IEnumerator CodingAnimationCorutine() {
 		yield return new WaitForSeconds(3);
+		Debug.Log("WTFF");
+		GameControl.Main().SpawnBugs();
 		GameControl.Main().GetPlayer().SetActive(true);
 		GetComponent<Animator>().SetBool(GlobalVariables.playerSelected? "GirlAnim" : "BoyAnim", false);
-		GameControl.Main().SpawnBugs();
 	}
 
 }
