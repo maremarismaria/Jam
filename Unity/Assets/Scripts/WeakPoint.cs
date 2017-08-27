@@ -20,7 +20,7 @@ public class WeakPoint : MonoBehaviour {
 		if(!toDestroy && other.CompareTag("Player")) {
 			toDestroy = true;
 			GameControl.Main().BugDie();
-			GetComponent<Animator>().SetBool("Die", true);
+			transform.parent.GetComponent<Animator>().SetBool("Die", true);
 			Destroy(transform.parent.gameObject, 0.4f);
 		}
 
