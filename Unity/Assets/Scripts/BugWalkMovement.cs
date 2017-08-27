@@ -10,6 +10,8 @@ public class BugWalkMovement : MonoBehaviour {
 	private bool jumping = false;
 	private float jumpRandomness;
 
+	public float airMoveCoefficient = 0.3f;
+
 	// Use this for initialization
 	void Start () {
 		jumpRandomness = Random.Range(3, 12) * 1000;
@@ -44,6 +46,14 @@ public class BugWalkMovement : MonoBehaviour {
 			if(Random.Range(0, jumpRandomness * Time.deltaTime) < 1) 
 				Jump();
 
+		}else{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(
+					Mathf.Lerp(-Mathf.Sign(transform.position.x - position.x) * velocity,
+					GetComponent<Rigidbody2D>().velocity.x,
+					airMoveCoefficient
+				)
+				,
+				 GetComponent<Rigidbody2D>().velocity.y);
 		}
 
 	}

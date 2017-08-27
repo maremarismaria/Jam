@@ -28,7 +28,6 @@ public class ComputerAnim : MonoBehaviour {
 
 	IEnumerator CodingAnimationCorutine() {
 		yield return new WaitForSeconds(3);
-		Debug.Log("WTFF");
 		GameControl.Main().SpawnBugs();
 		GameControl.Main().GetPlayer().SetActive(true);
 		GetComponent<Animator>().SetBool(GlobalVariables.playerSelected? "GirlAnim" : "BoyAnim", false);
