@@ -1,13 +1,27 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e090fe0c5416241368b871561201ff6f
 timeCreated: 1503831126
 licenseType: Free
 TextureImporter:
+<<<<<<< HEAD
+=======
+  fileIDToRecycleName: {}
+=======
+guid: b6f883e50291fd74e95853271cadd44b
+timeCreated: 1503829434
+licenseType: Free
+TextureImporter:
+>>>>>>> 989ca0a06ce99fb1d5b12040fe9cd963658b1171
   fileIDToRecycleName:
     21300000: enemigo.run_0
     21300002: enemigo.run_1
     21300004: enemigo.run_2
     21300006: enemigo.run_3
+<<<<<<< HEAD
+=======
+>>>>>>> 3d4059de2b61948f78e23ae47e918d87d5fadf1b
+>>>>>>> 989ca0a06ce99fb1d5b12040fe9cd963658b1171
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -31,7 +45,24 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
+<<<<<<< HEAD
     filterMode: 0
+    aniso: 16
+=======
+    filterMode: -1
+<<<<<<< HEAD
+    aniso: -1
+>>>>>>> 989ca0a06ce99fb1d5b12040fe9cd963658b1171
+    mipBias: -1
+    wrapMode: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+<<<<<<< HEAD
+  spriteMode: 2
+=======
+  spriteMode: 0
+=======
     aniso: 16
     mipBias: -1
     wrapMode: -1
@@ -39,16 +70,34 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
+>>>>>>> 3d4059de2b61948f78e23ae47e918d87d5fadf1b
+>>>>>>> 989ca0a06ce99fb1d5b12040fe9cd963658b1171
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+<<<<<<< HEAD
   spritePixelsToUnits: 10
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 8
+=======
+<<<<<<< HEAD
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+=======
+  spritePixelsToUnits: 10
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+>>>>>>> 3d4059de2b61948f78e23ae47e918d87d5fadf1b
+>>>>>>> 989ca0a06ce99fb1d5b12040fe9cd963658b1171
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
@@ -62,6 +111,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+<<<<<<< HEAD
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
@@ -72,6 +122,23 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
+=======
+<<<<<<< HEAD
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+=======
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+>>>>>>> 989ca0a06ce99fb1d5b12040fe9cd963658b1171
     sprites:
     - serializedVersion: 2
       name: enemigo.run_0
@@ -125,6 +192,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
+<<<<<<< HEAD
+=======
+>>>>>>> 3d4059de2b61948f78e23ae47e918d87d5fadf1b
+>>>>>>> 989ca0a06ce99fb1d5b12040fe9cd963658b1171
     outline: []
   spritePackingTag: 
   userData: 

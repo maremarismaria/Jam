@@ -11,6 +11,7 @@ public class GlobalVariables {
 	public static int numComputer = 0;
 	public static bool win = false;
 	public static bool gameOver = false;
+	public static string message = "";
 	public static float width = 100;
 
 	
