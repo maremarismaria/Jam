@@ -10,6 +10,7 @@ public class GameControl : MonoBehaviour {
 	public GameObject bug2Prefab;
 	public GameObject playerGirl;
 	public GameObject playerBoy;
+	public GameObject victoryJam;
 
 	private GameObject player;
 
@@ -49,7 +50,6 @@ public class GameControl : MonoBehaviour {
 		numberOfBugs = bugWaveAmount;
 		computersLeft = numberOfComputers;
 		mainControl = this;
-		Debug.Log(numberOfBugs+" "+computersLeft);
 		AddComputer();
 		player = Instantiate(GlobalVariables.playerSelected? playerGirl : playerBoy, FindPositionWithoutPc(), Quaternion.identity);
 	}
@@ -85,11 +85,14 @@ public class GameControl : MonoBehaviour {
 		return newTranform.position;
 	}
 
+	private bool end = false;
 	public void BugDie(){
 		numberOfBugs--;
+		Debug.Log(numberOfBugs+" " + numberOfComputers);
 		if(numberOfBugs == 0) {
-			if(computersLeft == 0) {
-				//win
+			if(!end && computersLeft == 1) {
+				end = true;
+				Instantiate(victoryJam, spawnPositions[Random.Range(0, spawnPositions.Count)].position, Quaternion.identity);
 			}else{
 				computersLeft--;
 				Destroy(computer.gameObject);
@@ -111,6 +114,10 @@ public class GameControl : MonoBehaviour {
 
 	public GameObject GetPlayer() {
 		return player;
+	}
+
+	public int NumberOfComputers() {
+		return numberOfComputers;
 	}
 
 }

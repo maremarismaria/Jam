@@ -17,7 +17,7 @@ public class LabelPizzaController : MonoBehaviour {
 	void Update () {
 		GameObject.FindGameObjectWithTag("PizzaLabel").GetComponent<Text>().text = "" + GlobalVariables.numPizzas;
 		GameObject.FindGameObjectWithTag("BugsLabel").GetComponent<Text>().text = "" + GlobalVariables.numBugs;
-		GameObject.FindGameObjectWithTag("ComputerLabel").GetComponent<Text>().text = "" + GlobalVariables.numComputer + "/4";
+		GameObject.FindGameObjectWithTag("ComputerLabel").GetComponent<Text>().text = "" + GlobalVariables.numComputer + "/" + GameControl.Main().NumberOfComputers();
 
 		if(Random.Range(0.0f, 5000f * Time.deltaTime) < 1 && GameControl.Main().IsStarted()){
 			float x = Random.Range(0.0f, -GlobalVariables.width);
