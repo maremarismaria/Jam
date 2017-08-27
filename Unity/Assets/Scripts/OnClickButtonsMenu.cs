@@ -11,6 +11,11 @@ public class OnClickButtonsMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
+
+	public void select(bool sel){
+		GlobalVariables.playerSelected = sel;
+	}
+
 }
