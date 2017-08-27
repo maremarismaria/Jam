@@ -8,6 +8,10 @@ public class GameControl : MonoBehaviour {
 	public float mainBugPercentage;
 	public GameObject bugPrefab;
 	public GameObject bug2Prefab;
+	public GameObject playerGirl;
+	public GameObject playerBoy;
+
+	private GameObject player;
 
 	public int bugWaveAmount = 4;
 	public int numberOfComputers = 4;
@@ -29,6 +33,11 @@ public class GameControl : MonoBehaviour {
 		mainControl = this;
 		Debug.Log(numberOfBugs+" "+computersLeft);
 		AddComputer();
+		//if(GlobalVariables.playerIsGirl)
+		player = Instantiate(GlobalVariables.playerSelected? playerGirl : playerBoy, computer.transform.position, Quaternion.identity);
+
+
+		
 	}
 	
 	// Update is called once per frame
@@ -49,7 +58,7 @@ public class GameControl : MonoBehaviour {
 				newTranform = spawnPositions[Random.Range(0, spawnPositions.Count)];
 			}while(newTranform.position == computerTranform.position);
 			Vector3 newposition = newTranform.position + new Vector3(Random.Range(spawnOffset, -spawnOffset), Random.Range(spawnOffset, -spawnOffset), 0);
-			Instantiate(bugPrefab, newposition, Quaternion.identity);
+			Instantiate( Random.Range(0, 100) < mainBugPercentage? bugPrefab : bug2Prefab, newposition, Quaternion.identity);
 		}
 		numberOfBugs = bugWaveAmount;
 	}
@@ -71,6 +80,10 @@ public class GameControl : MonoBehaviour {
 
 	public Vector3 ComputerPosition() {
 		return computer.transform.position;
+	}
+
+	public GameObject GetPlayer() {
+		return player;
 	}
 
 }

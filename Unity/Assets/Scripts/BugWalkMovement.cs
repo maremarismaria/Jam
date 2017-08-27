@@ -6,14 +6,14 @@ public class BugWalkMovement : MonoBehaviour {
 
 	public float velocity = 2;
 	public float jumpForce = 100;
-	public float jumpCheck = 10000;
+	public float jumpCheck = 10;
 	private bool jumping = false;
 	private float jumpRandomness;
 
 	// Use this for initialization
 	void Start () {
 		jumpRandomness = Random.Range(3, 12) * 1000;
-		jumpCheck = jumpForce / 10;
+		//jumpCheck = (jumpForce / GetComponent<Rigidbody2D>().mass) / (2.0f * -Physics2D.gravity.y *  GetComponent<Rigidbody2D>().gravityScale);
 
 		Debug.Log(jumpCheck);
 	}
