@@ -16,8 +16,24 @@ public class GameControl : MonoBehaviour {
 	public int bugWaveAmount = 4;
 	public int numberOfComputers = 4;
 
-	private int numberOfBugs;
-	private int computersLeft;
+	private int numberOfBugs{
+		get{
+			return GlobalVariables.numBugs;			
+		}
+
+		set{
+			GlobalVariables.numBugs = value;
+		}
+	}
+	private int computersLeft{
+		get{
+			return numberOfComputers - GlobalVariables.numComputer;			
+		}
+
+		set{
+			GlobalVariables.numComputer = numberOfComputers - value;
+		}
+	}
 
 	public float spawnOffset = 0.3f;
 
@@ -37,7 +53,7 @@ public class GameControl : MonoBehaviour {
 		player = Instantiate(GlobalVariables.playerSelected? playerGirl : playerBoy, computer.transform.position, Quaternion.identity);
 
 
-		
+
 	}
 	
 	// Update is called once per frame
