@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GlobalVariables {
 
-	public static bool playerSelected = false;
+	public static bool playerSelected = true;
 	public static float playerLife = 100.0f;
 	public static int numPizzas = 0;
 	public static int numBugs = 0;
