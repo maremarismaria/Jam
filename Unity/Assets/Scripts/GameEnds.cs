@@ -2,25 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LifeRefillZone : MonoBehaviour {
-
-	//On Home
-
-	Vector3 scale;
+public class GameEnds : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		scale = gameObject.transform.localScale;
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		if(GlobalVariables.playerLife <= 0){
+			GlobalVariables.gameOver = true;
+		}
 	}
 
 	void OnTriggerStay2D(Collider2D collider){
-		if(collider.gameObject.tag == "Player"){
-			GlobalVariables.playerLife += 20 * Time.deltaTime;	
+		if(collider.gameObject.tag == "Jam" && GlobalVariables.playerLife > 0){
+			GlobalVariables.win = true;
 		}
 	}
 

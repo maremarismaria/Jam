@@ -9,6 +9,8 @@ public class GlobalVariables {
 	public static int numPizzas = 0;
 	public static int numBugs = 0;
 	public static int numComputer = 0;
+	public static bool win = false;
+	public static bool gameOver = false;
 	public static float width = 100;
 
 	
