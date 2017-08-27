@@ -47,6 +47,7 @@ public class GameControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GlobalVariables.playerLife = 100;
 		numberOfBugs = bugWaveAmount;
 		computersLeft = numberOfComputers;
 		mainControl = this;

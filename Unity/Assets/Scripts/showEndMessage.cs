@@ -13,5 +13,7 @@ public class showEndMessage : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GameObject.FindGameObjectWithTag("EndText").GetComponent<Text>().text = GlobalVariables.message;
+		GlobalVariables.win = false;
+		GlobalVariables.gameOver = false;
 	}
 }

@@ -1,0 +1,55 @@
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
+    Vendor:   Intel
+    VRAM:     1116 MB
+    Driver:   20.19.15.4531
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.025 seconds
+Platform assembly: C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Alberto\Documents\Github\Jam2\Jam\Unity\BuildAA\JamerJump_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.932420 ms
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 395)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: bcc -> priority: 1 
+  Thread -> id: 1ce0 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.866552 ms
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 329.
+Total: 0.684245 ms (FindLiveObjects: 0.034212 ms CreateObjectMapping: 0.027369 ms MarkObjects: 0.203135 ms  DeleteObjects: 0.418672 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.487097 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 833.
+Total: 0.382749 ms (FindLiveObjects: 0.079115 ms CreateObjectMapping: 0.050035 ms MarkObjects: 0.244190 ms  DeleteObjects: 0.008125 ms)
+
+10000
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+10000
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
