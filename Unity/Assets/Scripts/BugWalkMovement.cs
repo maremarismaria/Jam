@@ -29,8 +29,10 @@ public class BugWalkMovement : MonoBehaviour {
 		}
 
 		if(GetComponent<Rigidbody2D>().velocity.y > 0) {
+			GetComponent<Animator>().SetBool("Falling", false);
 			GetComponent<Collider2D>().enabled = false;
 		}else{
+			GetComponent<Animator>().SetBool("Falling", true);
 			GetComponent<Collider2D>().enabled = true;
 		}
 
@@ -51,10 +53,12 @@ public class BugWalkMovement : MonoBehaviour {
 		if(jumping && GetComponent<Rigidbody2D>().velocity.y <= 0
 		 && !collision.otherCollider.gameObject.CompareTag("Player")) {
 			jumping = false;
+			GetComponent<Animator>().SetBool("Jumping", false);
 		}
 	}
 
 	private void Jump() {
+		GetComponent<Animator>().SetBool("Jumping", true);
 		jumping = true;
 		GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
 	}
