@@ -52,7 +52,11 @@ public class GameControl : MonoBehaviour {
 		computersLeft = numberOfComputers;
 		mainControl = this;
 		AddComputer();
-		player = Instantiate(GlobalVariables.playerSelected? playerGirl : playerBoy, FindPositionWithoutPc(), Quaternion.identity);
+		player = Instantiate(GlobalVariables.playerSelected? playerGirl : playerBoy,
+            FindPositionWithoutPc(), Quaternion.identity);
+
+        GameObject menuSong = GameObject.FindGameObjectWithTag("MenuSong");
+        if (menuSong != null) Destroy(menuSong);
 	}
 	
 	// Update is called once per frame
@@ -72,8 +76,11 @@ public class GameControl : MonoBehaviour {
 	public void SpawnBugs() {
 		init = true;
 		for(int i = 0; i < bugWaveAmount; i++) {
-			Vector3 newposition = FindPositionWithoutPc() + new Vector3(Random.Range(spawnOffset, -spawnOffset), Random.Range(spawnOffset, -spawnOffset), 0);
-			Instantiate( Random.Range(0, 100) < mainBugPercentage? bugPrefab : bug2Prefab, newposition, Quaternion.identity);
+			Vector3 newposition = FindPositionWithoutPc() +
+                new Vector3(Random.Range(spawnOffset, -spawnOffset), Random.Range(spawnOffset, -spawnOffset), 0);
+
+			Instantiate( Random.Range(0, 100) < mainBugPercentage? 
+                bugPrefab : bug2Prefab, newposition, Quaternion.identity);
 		}
 		numberOfBugs = bugWaveAmount;
 	}
@@ -93,7 +100,9 @@ public class GameControl : MonoBehaviour {
 		if(numberOfBugs == 0) {
 			if(!end && computersLeft == 1) {
 				end = true;
-				Instantiate(victoryJam, spawnPositions[Random.Range(0, spawnPositions.Count)].position, Quaternion.identity);
+				Instantiate(victoryJam, 
+                    spawnPositions[Random.Range(0, spawnPositions.Count)].position,
+                    Quaternion.identity);
 			}else{
 				computersLeft--;
 				Destroy(computer.gameObject);
